@@ -1,0 +1,4 @@
+%{
+  "kino": {:hex, :kino, "0.6.2", "3e8463ea19551f368c3dcbbf39d36b2627a33916598bfe87f51adc9aaab453fb", [:mix], [{:table, "~> 0.1.2", [hex: :table, repo: "hexpm", optional: false]}], "hexpm", "488cd83fa6efcdb4d5289c25daf842c44b33508fea048eb98f58132afc4ed513"},
+  "table": {:hex, :table, "0.1.2", "87ad1125f5b70c5dea0307aa633194083eb5182ec537efc94e96af08937e14a8", [:mix], [], "hexpm", "7e99bc7efef806315c7e65640724bf165c3061cdc5d854060f74468367065029"},
+}
