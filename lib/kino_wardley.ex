@@ -2,7 +2,7 @@ defmodule Kino.Wardley do
   @moduledoc false
 
   use Kino.JS
-  use Kino.SmartCell, name: "Wardley Mp"
+  use Kino.SmartCell, name: "Wardley Map"
   use Kino.JS.Live
 
   def new(spec) do
