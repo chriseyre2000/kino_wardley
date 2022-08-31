@@ -2,7 +2,7 @@ defmodule Kino.Wardley do
   @moduledoc false
 
   use Kino.JS
-  use Kino.SmartCell, name: "Kino Wardley"
+  use Kino.SmartCell, name: "Wardley Mp"
   use Kino.JS.Live
 
   def new(spec) do
@@ -18,37 +18,36 @@ defmodule Kino.Wardley do
 
   @impl true
   def to_source(_) do
-    quote do
-      Kino.Wardley.new("""
-      {
-        "id": "myid7",
-        "height": "400",
-        "width": "800",
-        "map" : [
-          "anchor Business [0.95, 0.63]",
-          "anchor Public [0.95, 0.78]",
-          "component Cup of Tea [0.79, 0.61]",
-          "component Cup [0.73, 0.78]",
-          "component Tea [0.63, 0.81]",
-          "component Hot Water [0.52, 0.80]",
-          "component Water [0.38, 0.82]",
-          "component Kettle [0.43, 0.35]",
-          "evolve Kettle [0.43, 0.62]",
-          "component Power [0.10, 0.71]",
-          "evolve Power [0.10, 0.89]",
-          "Business->Cup of Tea",
-          "Public->Cup of Tea",
-          "Cup of Tea->Cup",
-          "Cup of Tea->Tea",
-          "Cup of Tea->Hot Water",
-          "Hot Water->Water",
-          "Hot Water->Kettle",
-          "Kettle->Power"
-        ]
-      }
-      """)
-    end
-    |> Kino.SmartCell.quoted_to_string()
+    '''
+    Kino.Wardley.new("""
+    {
+    "id": "myid7",
+    "height": "400",
+    "width": "800",
+    "map" : [
+    "anchor Business [0.95, 0.63]",
+    "anchor Public [0.95, 0.78]",
+    "component Cup of Tea [0.79, 0.61]",
+    "component Cup [0.73, 0.78]",
+    "component Tea [0.63, 0.81]",
+    "component Hot Water [0.52, 0.80]",
+    "component Water [0.38, 0.82]",
+    "component Kettle [0.43, 0.35]",
+    "xevolve Kettle [0.43, 0.62]",
+    "component Power [0.10, 0.71]",
+    "xevolve Power [0.10, 0.89]",
+    "Business->Cup of Tea",
+    "Public->Cup of Tea",
+    "Cup of Tea->Cup",
+    "Cup of Tea->Tea",
+    "Cup of Tea->Hot Water",
+    "Hot Water->Water",
+    "Hot Water->Kettle",
+    "Kettle->Power"
+    ]
+    }
+    """)
+    '''
   end
 
   @impl true
