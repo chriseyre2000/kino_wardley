@@ -7,7 +7,8 @@ defmodule KinoWardley.MixProject do
       version: "0.1.1",
       elixir: "~> 1.13",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      package: package()
     ]
   end
 
@@ -21,7 +22,18 @@ defmodule KinoWardley.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:kino, "~> 0.6.2"}
+      {:kino, "~> 0.6.2"},
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
+    ]
+  end
+
+  defp package do
+    [
+      name: "kino_wardley",
+      # These are the default files included in the package
+      description: "A livebook smartcell that includes a Wardley Map.",
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/chriseyre2000/kino_wardley"}
     ]
   end
 end
