@@ -55,30 +55,32 @@ defmodule Kino.Wardley do
 
         function parseSpec(specLines) {
           let summary = specLines.reduce((acc, item) => {
-            if (item.startsWith("id")) {
-              const name = item.split(" ")[1];
+            let trimedItem = item.trim();
+
+            if (trimedItem.startsWith("id")) {
+              const name = trimedItem.split(" ")[1];
               acc["__id"] = name
             }
-            if (item.startsWith("width")) {
-              const name = item.split(" ")[1];
+            if (trimedItem.startsWith("width")) {
+              const name = trimedItem.split(" ")[1];
               acc["__width"] = name
             }
-            if (item.startsWith("height")) {
-              const name = item.split(" ")[1];
+            if (trimedItem.startsWith("height")) {
+              const name = trimedItem.split(" ")[1];
               acc["__height"] = name
             }
-            if (item.startsWith("background")) {
-              const name = item.split(" ")[1];
+            if (trimedItem.startsWith("background")) {
+              const name = trimedItem.split(" ")[1];
               acc["__background"] = name
             }
-            if (item.startsWith("padding")) {
-              const name = item.split(" ")[1];
+            if (trimedItem.startsWith("padding")) {
+              const name = trimedItem.split(" ")[1];
               acc["__padding"] = name
             }
 
-            if (item.startsWith("anchor")) {
-               const name = /anchor (?<name>[^ $]*)/.exec(item).groups.name
-               let parts = item.split("[");
+            if (trimedItem.startsWith("anchor")) {
+               const name = /anchor (?<name>[^ $]*)/.exec(trimedItem).groups.name
+               let parts = trimedItem.split("[");
                parts = parts[1];
                parts = parts.split("]");
                parts = parts[0];
@@ -89,9 +91,9 @@ defmodule Kino.Wardley do
                acc[name] = {name: name, x: x, y: y, type: "anchor" }
             }
 
-            if (item.startsWith("component")) {
-              const name = /component\s([^\[]*)\s\\[/.exec(item)[1]
-              let parts = item.split("[");
+            if (trimedItem.startsWith("component")) {
+              const name = /component\s([^\[]*)\s\\[/.exec(trimedItem)[1]
+              let parts = trimedItem.split("[");
               parts = parts[1];
               parts = parts.split("]");
               parts = parts[0];
@@ -102,9 +104,9 @@ defmodule Kino.Wardley do
               acc[name] = {name: name, x: x, y: y, type: "component" }
             }
 
-            if (item.startsWith("evolve")) {
-              const name = /evolve\s([^\[]*)\s\\[/.exec(item)[1]
-              let parts = item.split("[");
+            if (trimedItem.startsWith("evolve")) {
+              const name = /evolve\s([^\[]*)\s\\[/.exec(trimedItem)[1]
+              let parts = trimedItem.split("[");
               parts = parts[1];
               parts = parts.split("]");
               parts = parts[0];
@@ -200,9 +202,9 @@ defmodule Kino.Wardley do
             if(item.includes("->")) {
               const parts = item.split("->");
 
-              if(summary[parts[0]] != undefined && summary[parts[1]] != undefined) {
-                let start = summary[parts[0]];
-                let end = summary[parts[1]];
+              if(summary[parts[0].trim()] != undefined && summary[parts[1].trim()] != undefined) {
+                let start = summary[parts[0].trim()];
+                let end = summary[parts[1].trim()];
                 let startEvolved = undefined
                 let endEvolved = undefined
 
