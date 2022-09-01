@@ -49,20 +49,13 @@ defmodule Kino.Wardley do
   @impl true
   def to_attrs(_), do: %{}
 
-  # TODO: Restore the id, width, height, background and padding options.
-
   asset "main.js" do
     """
         import "https://d3js.org/d3.v7.js"
+
         export function init(ctx, spec) {
 
           const mapItems = spec.split("\\n")
-
-          const myId = "my-id"
-          const width = 800;
-          const height = 400;
-          const background = "white"
-          const padding =  20;
 
         var name
         var parts
@@ -74,6 +67,27 @@ defmodule Kino.Wardley do
         var endEvolved
 
         let summary = mapItems.reduce((acc, item) => {
+          if (item.startsWith("id")) {
+            name = item.split(" ")[1];
+            acc["__id"] = name
+          }
+          if (item.startsWith("width")) {
+            name = item.split(" ")[1];
+            acc["__width"] = name
+          }
+          if (item.startsWith("height")) {
+            name = item.split(" ")[1];
+            acc["__height"] = name
+          }
+          if (item.startsWith("background")) {
+            name = item.split(" ")[1];
+            acc["__background"] = name
+          }
+          if (item.startsWith("padding")) {
+            name = item.split(" ")[1];
+            acc["__padding"] = name
+          }
+
           if (item.startsWith("anchor")) {
              name = /anchor (?<name>[^ $]*)/.exec(item).groups.name
              parts = item.split("[");
@@ -115,6 +129,12 @@ defmodule Kino.Wardley do
 
           return acc
         },{});
+
+        const myId = summary["__id"] ||  "my-id"
+        const width = parseInt(summary["__width"] ||  "800");
+        const height = parseInt(summary["__height"] || "400");
+        const background = summary["__background"] || "white";
+        const padding = parseInt(summary["__padding"] || "20");
 
         // Start drawing
         ctx.root.innerHTML = `<svg id=${myId} style="margin: 0 auto; display: block;"></svg>`;
