@@ -24,3 +24,5 @@ kino_wardley-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/
+
+test/node_modules/
