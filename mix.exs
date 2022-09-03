@@ -30,8 +30,9 @@ defmodule KinoWardley.MixProject do
   defp package do
     [
       name: "kino_wardley",
-      # These are the default files included in the package
       description: "A livebook smartcell that includes a Wardley Map.",
+      files: ~w(lib lib/assets/js priv .formatter.exs mix.exs README* readme* LICENSE*
+                license* CHANGELOG* changelog* src),
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/chriseyre2000/kino_wardley"}
     ]
