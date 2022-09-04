@@ -23,3 +23,7 @@ Here is a summary of what this can do:
 
 https://devrants.blog/2022/08/31/wardley-map-smart-cell-early-doors/
 
+Since large parts of this are in javascript it has a javascript test suite.
+The test folder has a package.json.
+`npm run test`
+
