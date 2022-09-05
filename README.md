@@ -49,7 +49,7 @@ evolution Experiment->Prototype->Production->Product
 """)
 ```
 
-![sample wardley map](https://github.com/chriseyre2000/kino_wardley/raw/master/src/cup-of-tea.png "Sample Wardley Map")
+![sample wardley map](https://raw.githubusercontent.com/chriseyre2000/kino_wardley/main/cup-of-tea.png "Sample Wardley Map")
 
 
 
