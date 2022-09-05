@@ -278,3 +278,18 @@ test("regex working test", () => {
   expect(output).toEqual(expected);
 })
 
+test("parseEvolutionAxis", () => {
+  const input = "evolution First->Second->Third->Fourth"
+
+  const expected = {
+    __evolution: [
+      "First",
+      "Second",
+      "Third",
+      "Fourth"
+    ]
+  }
+
+  expect(parseSpec(input.split("\n"))).toStrictEqual(expected);
+})
+
