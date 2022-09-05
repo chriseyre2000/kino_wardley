@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added unit tests
 ### Added a changelog
+### Added the ability to define offsets as per onlinewardleymap.com
+
+This allows things like:
+`component Kettle [0.43, 0.35] label [-57, 4]`
+
+I have not yet solved the evolve parsing.
 
 ## [0.3.0] - 2022-09-03
 ### Improved parsing via regex.
