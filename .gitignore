@@ -26,3 +26,7 @@ kino_wardley-*.tar
 /tmp/
 
 test/node_modules/
+
+.DS_Store
+
+lib/.DS_Store
