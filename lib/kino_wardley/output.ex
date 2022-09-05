@@ -2,7 +2,7 @@ defmodule KinoWardley.Output do
   use Kino.JS, assets_path: "lib/assets/js"
 
   @moduledoc """
-  This is the livecell used to render Wardley Maps.
+  This is the output used to render Wardley Maps.
   """
 
   @doc """

@@ -1,5 +1,8 @@
 defmodule Kino.Wardley do
-  @moduledoc false
+  @moduledoc """
+  This is the smart cell that can be used to add a Wardley Map to a page.
+
+  """
 
   use Kino.JS, assets_path: "lib/assets/js"
   use Kino.SmartCell, name: "Wardley Map"
@@ -19,7 +22,7 @@ defmodule Kino.Wardley do
   @impl true
   def to_source(_) do
     '''
-    Kino.Wardley.new("""
+    KinoWardley.Output.new("""
     id myid7
     height 400
     width 800
@@ -31,9 +34,9 @@ defmodule Kino.Wardley do
     component Hot Water [0.52, 0.80]
     component Water [0.38, 0.82]
     component Kettle [0.43, 0.35]
-    xevolve Kettle [0.43, 0.62]
+    evolve Kettle [0.43, 0.62]
     component Power [0.10, 0.71]
-    xevolve Power [0.10, 0.89]
+    evolve Power [0.10, 0.89]
     Business->Cup of Tea
     Public->Cup of Tea
     Cup of Tea->Cup
