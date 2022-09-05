@@ -31,7 +31,7 @@ defmodule KinoWardley.MixProject do
     [
       name: "kino_wardley",
       description: "A livebook smartcell that includes a Wardley Map.",
-      files: ~w(lib lib/assets/js .formatter.exs mix.exs README* LICENSE* CHANGELOG.md),
+      files: ~w(lib lib/assets/js .formatter.exs cup-of-tea.png mix.exs README* LICENSE* CHANGELOG.md),
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/chriseyre2000/kino_wardley"}
     ]
