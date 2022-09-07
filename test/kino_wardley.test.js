@@ -1,4 +1,4 @@
-import {parseSpec, extractNameLocationAndOffset} from "../lib/assets/js/main"
+import { parseSpec, extractNameLocationAndOffset } from "../lib/assets/js/main"
 
 test('Empty spec is empty', () => {
   expect(parseSpec([])).toStrictEqual({});
@@ -30,99 +30,99 @@ test('Sample spec parses to expected', () => {
   Hot Water->Kettle
   Kettle->Power`
 
-  const expected =  {
-       "Business": {
-         "name": "Business",
-         "type": "anchor",
-         "dx": 0,
-         "dy": 0,
-         "x": 0.63,
-         "y": 0.95,
-       },
-       "Cup": {
-         "name": "Cup",
-         "type": "component",
-         "dx": 0,
-         "dy": 0,         
-         "x": 0.78,
-         "y": 0.73,
-       },
-       "Cup of Tea": {
-         "name": "Cup of Tea",
-         "type": "component",
-         "dx": 0,
-         "dy": 0,
-         "x": 0.61,
-         "y": 0.79,
-       },
-       "Hot Water": {
-         "name": "Hot Water",
-         "type": "component",
-         "dx": 0,
-         "dy": 0,
-         "x": 0.8,
-         "y": 0.52,
-       },
-       "Kettle": {
-         "name": "Kettle",
-         "type": "component",
-         "dx": 0,
-         "dy": 0,
-         "x": 0.35,
-         "y": 0.43,
-       },
-       "Kettle__evolve": {
-         "name": "Kettle",
-         "type": "evolve",
-         "dx": 0,
-         "dy": 0,
-         "x": 0.62,
-         "y": 0.43,
-       },
-       "Power": {
-         "name": "Power",
-         "type": "component",
-         "dx": 0,
-         "dy": 0,
-         "x": 0.71,
-         "y": 0.1,
-       },
-       "Power__evolve": {
-         "name": "Power",
-         "type": "evolve",
-         "dx": 0,
-         "dy": 0,
-         "x": 0.89,
-         "y": 0.1,
-      },
-       "Public": {
-         "name": "Public",
-         "type": "anchor",
-         "dx": 0,
-         "dy": 0,
-         "x": 0.78,
-         "y": 0.95,
-       },
-       "Tea": {
-         "name": "Tea",
-         "type": "component",
-         "dx": 0,
-         "dy": 0,
-         "x": 0.81,
-         "y": 0.63,
-       },
-       "Water": {
-         "name": "Water",
-         "type": "component",
-         "dx": 0,
-         "dy": 0,
-         "x": 0.82,
-         "y": 0.38,
-       },
-       "__height": "400",
-       "__id": "myid7",
-       "__width": "800",
-     }
+  const expected = {
+    "Business": {
+      "name": "Business",
+      "type": "anchor",
+      "dx": 0,
+      "dy": 0,
+      "x": 0.63,
+      "y": 0.95,
+    },
+    "Cup": {
+      "name": "Cup",
+      "type": "component",
+      "dx": 0,
+      "dy": 0,
+      "x": 0.78,
+      "y": 0.73,
+    },
+    "Cup of Tea": {
+      "name": "Cup of Tea",
+      "type": "component",
+      "dx": 0,
+      "dy": 0,
+      "x": 0.61,
+      "y": 0.79,
+    },
+    "Hot Water": {
+      "name": "Hot Water",
+      "type": "component",
+      "dx": 0,
+      "dy": 0,
+      "x": 0.8,
+      "y": 0.52,
+    },
+    "Kettle": {
+      "name": "Kettle",
+      "type": "component",
+      "dx": 0,
+      "dy": 0,
+      "x": 0.35,
+      "y": 0.43,
+    },
+    "Kettle__evolve": {
+      "name": "Kettle",
+      "type": "evolve",
+      "dx": 0,
+      "dy": 0,
+      "x": 0.62,
+      "y": 0.43,
+    },
+    "Power": {
+      "name": "Power",
+      "type": "component",
+      "dx": 0,
+      "dy": 0,
+      "x": 0.71,
+      "y": 0.1,
+    },
+    "Power__evolve": {
+      "name": "Power",
+      "type": "evolve",
+      "dx": 0,
+      "dy": 0,
+      "x": 0.89,
+      "y": 0.1,
+    },
+    "Public": {
+      "name": "Public",
+      "type": "anchor",
+      "dx": 0,
+      "dy": 0,
+      "x": 0.78,
+      "y": 0.95,
+    },
+    "Tea": {
+      "name": "Tea",
+      "type": "component",
+      "dx": 0,
+      "dy": 0,
+      "x": 0.81,
+      "y": 0.63,
+    },
+    "Water": {
+      "name": "Water",
+      "type": "component",
+      "dx": 0,
+      "dy": 0,
+      "x": 0.82,
+      "y": 0.38,
+    },
+    "__height": "400",
+    "__id": "myid7",
+    "__width": "800",
+  }
 
   expect(parseSpec(input.split("\n"))).toStrictEqual(expected);
 });
@@ -163,109 +163,110 @@ test('Online wardley map parses to expected', () => {
   style wardley`
 
   const expected = {
-      "Business": {
-        "name": "Business",
-        "type": "anchor",
-        "dx": 0,
-        "dy": 0,
-        "x": 0.63,
-        "y": 0.95,
-      },
-      "Cup": {
-        "name": "Cup",
-        "type": "component",
-        "dx": 0,
-        "dy": 0,
-        "x": 0.78,
-        "y": 0.73,
-      },
-      "Cup of Tea": {
-        "name": "Cup of Tea",
-        "type": "component",
-        "dx": 19,
-        "dy": -4,
-        "x": 0.61,
-        "y": 0.79,
-      },
-      "Hot Water": {
-        "name": "Hot Water",
-        "type": "component",
-        "dx": 0,
-        "dy": 0,
-        "x": 0.8,
-        "y": 0.52,
-      },
-      "Kettle": {
-        "name": "Kettle",
-        "type": "component",
-        "dx": -57,
-        "dy": 4,
-        "x": 0.35,
-        "y": 0.43,
-      },
-      "Kettle__evolve": {
-        "name": "Kettle",
-        "type": "evolve",
-        "dx": 16,
-        "dy": 7,
-        "x": 0.62,
-        "y": 0.43,
-      },
-      "Power": {
-        "name": "Power",
-        "type": "component",
-        "dx": -27,
-        "dy": 20,
-        "x": 0.7,
-        "y": 0.1,
-      },
-      "Power__evolve": {
-        "name": "Power",
-        "type": "evolve",
-        "dx": -12,
-        "dy": 21,
-        "x": 0.89,
-        "y": 0.1,
-      },
-      "Public": {
-        "name": "Public",
-        "type": "anchor",
-        "dx": 0,
-        "dy": 0,
-        "x": 0.78,
-        "y": 0.95,
-      },
-      "Tea": {
-        "name": "Tea",
-        "type": "component",
-        "dx": 0,
-        "dy": 0,
-        "x": 0.81,
-        "y": 0.63,
-      },
-      "Water": {
-        "name": "Water",
-        "type": "component",
-        "dx": 0,
-        "dy": 0,
-        "x": 0.82,
-        "y": 0.38,
-      },
-      "__height": "400",
-      "__id": "myid7",
-      "__width": "800",
-    }
+    "__title": "Tea Shop",
+    "Business": {
+      "name": "Business",
+      "type": "anchor",
+      "dx": 0,
+      "dy": 0,
+      "x": 0.63,
+      "y": 0.95,
+    },
+    "Cup": {
+      "name": "Cup",
+      "type": "component",
+      "dx": 0,
+      "dy": 0,
+      "x": 0.78,
+      "y": 0.73,
+    },
+    "Cup of Tea": {
+      "name": "Cup of Tea",
+      "type": "component",
+      "dx": 19,
+      "dy": -4,
+      "x": 0.61,
+      "y": 0.79,
+    },
+    "Hot Water": {
+      "name": "Hot Water",
+      "type": "component",
+      "dx": 0,
+      "dy": 0,
+      "x": 0.8,
+      "y": 0.52,
+    },
+    "Kettle": {
+      "name": "Kettle",
+      "type": "component",
+      "dx": -57,
+      "dy": 4,
+      "x": 0.35,
+      "y": 0.43,
+    },
+    "Kettle__evolve": {
+      "name": "Kettle",
+      "type": "evolve",
+      "dx": 16,
+      "dy": 7,
+      "x": 0.62,
+      "y": 0.43,
+    },
+    "Power": {
+      "name": "Power",
+      "type": "component",
+      "dx": -27,
+      "dy": 20,
+      "x": 0.7,
+      "y": 0.1,
+    },
+    "Power__evolve": {
+      "name": "Power",
+      "type": "evolve",
+      "dx": -12,
+      "dy": 21,
+      "x": 0.89,
+      "y": 0.1,
+    },
+    "Public": {
+      "name": "Public",
+      "type": "anchor",
+      "dx": 0,
+      "dy": 0,
+      "x": 0.78,
+      "y": 0.95,
+    },
+    "Tea": {
+      "name": "Tea",
+      "type": "component",
+      "dx": 0,
+      "dy": 0,
+      "x": 0.81,
+      "y": 0.63,
+    },
+    "Water": {
+      "name": "Water",
+      "type": "component",
+      "dx": 0,
+      "dy": 0,
+      "x": 0.82,
+      "y": 0.38,
+    },
+    "__height": "400",
+    "__id": "myid7",
+    "__width": "800",
+  }
   expect(parseSpec(input.split("\n"))).toStrictEqual(expected);
 });
 
 test("regex extract full", () => {
   const output = extractNameLocationAndOffset("component Cup of Tea [0.79, 0.61] label [10, 11]")
   const expected = {
-   "first": "0.79",
-   "fourth": "11",
-   "name": "Cup of Tea ",
-   "second": "0.61",
-   "third": "10",
+    "first": "0.79",
+    "fourth": "11",
+    "name": "Cup of Tea ",
+    "second": "0.61",
+    "third": "10",
   }
   expect(output).toEqual(expected);
 })
@@ -273,11 +274,11 @@ test("regex extract full", () => {
 test("regex extract short", () => {
   const output = extractNameLocationAndOffset("component Cup of Tea [0.79, 0.61]")
   const expected = {
-   "first": "0.79",
-   "fourth": "",
-   "name": "Cup of Tea ",
-   "second": "0.61",
-   "third": "",
+    "first": "0.79",
+    "fourth": "",
+    "name": "Cup of Tea ",
+    "second": "0.61",
+    "third": "",
   }
   expect(output).toEqual(expected);
 })
@@ -285,11 +286,11 @@ test("regex extract short", () => {
 test("regex working test", () => {
   const output = /\w+\s(?<name>[^\[]*)\[(?<first>[^\,]*),\s*(?<second>[^\]]*)]\s*[label\s\[]*(?<third>[^,]*)[,\s]*(?<fourth>[^\]]*)/.exec("component Cup of Tea [0.79, 0.61] label [10, 11]").groups
   const expected = {
-   "first": "0.79",
-   "fourth": "11",
-   "name": "Cup of Tea ",
-   "second": "0.61",
-   "third": "10",
+    "first": "0.79",
+    "fourth": "11",
+    "name": "Cup of Tea ",
+    "second": "0.61",
+    "third": "10",
   }
   expect(output).toEqual(expected);
 })
