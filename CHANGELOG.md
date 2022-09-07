@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Pending
 
 ### Now supports title
+### Also supports note
 
 ## [0.4.1]
 
