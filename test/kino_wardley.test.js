@@ -4,7 +4,7 @@ test('Empty spec is empty', () => {
   expect(parseSpec([])).toStrictEqual({});
 });
 
-test('Sample spec renders to expected', () => {
+test('Sample spec parses to expected', () => {
 
   const input = `
   id myid7
@@ -127,7 +127,7 @@ test('Sample spec renders to expected', () => {
   expect(parseSpec(input.split("\n"))).toStrictEqual(expected);
 });
 
-test('Online wardley map renders to expected', () => {
+test('Online wardley map parses to expected', () => {
 
   const input = `
   id myid7
