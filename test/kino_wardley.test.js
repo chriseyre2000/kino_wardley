@@ -142,9 +142,9 @@ test('Online wardley map parses to expected', () => {
   component Hot Water [0.52, 0.80]
   component Water [0.38, 0.82]
   component Kettle [0.43, 0.35] label [-57, 4]
-  xevolve Kettle 0.62 label [16, 7]
+  evolve Kettle 0.62 label [16, 7]
   component Power [0.1, 0.7] label [-27, 20]
-  xevolve Power 0.89 label [-12, 21]
+  evolve Power 0.89 label [-12, 21]
   Business->Cup of Tea
   Public->Cup of Tea
   Cup of Tea->Cup
@@ -203,12 +203,28 @@ test('Online wardley map parses to expected', () => {
         "x": 0.35,
         "y": 0.43,
       },
+      "Kettle__evolve": {
+        "name": "Kettle",
+        "type": "evolve",
+        "dx": 16,
+        "dy": 7,
+        "x": 0.62,
+        "y": 0.43,
+      },
       "Power": {
         "name": "Power",
         "type": "component",
         "dx": -27,
         "dy": 20,
         "x": 0.7,
+        "y": 0.1,
+      },
+      "Power__evolve": {
+        "name": "Power",
+        "type": "evolve",
+        "dx": -12,
+        "dy": 21,
+        "x": 0.89,
         "y": 0.1,
       },
       "Public": {
