@@ -252,33 +252,33 @@ test('Online wardley map parses to expected', () => {
       "x": 0.82,
       "y": 0.38,
     },
-         "1": {
-           "description": "Standardising power allows Kettles to evolve faster",
-           "type": "annotation",
-           "label": "1",
-           "points": [
-             {
-               "x": 0.49,
-               "y": 0.43,
-             },
-             {
-               "x": 0.79,
-               "y": 0.08,
-             },
-           ],
-         },
-         "2": {
-           "description": "Hot water is obvious and well known",
-           "label": "2",
-           "type": "annotation",
-           "points": [
-             {
-               "x": 0.85,
-               "y": 0.48,
-             },
-           ],
-         },
-  
+    "1": {
+      "description": "Standardising power allows Kettles to evolve faster",
+      "type": "annotation",
+      "label": "1",
+      "points": [
+        {
+          "x": 0.49,
+          "y": 0.43,
+        },
+        {
+          "x": 0.79,
+          "y": 0.08,
+        },
+      ],
+    },
+    "2": {
+      "description": "Hot water is obvious and well known",
+      "label": "2",
+      "type": "annotation",
+      "points": [
+        {
+          "x": 0.85,
+          "y": 0.48,
+        },
+      ],
+    },
+
     "+a generic note appeared": {
       "dx": 0,
       "dy": 0,
@@ -286,6 +286,11 @@ test('Online wardley map parses to expected', () => {
       "type": "note",
       "x": 0.33,
       "y": 0.23,
+    },
+    "__annotations": {
+      "type": "annotations",
+      "x": 0.02,
+      "y": 0.6,
     },
     "__height": "400",
     "__id": "myid7",
