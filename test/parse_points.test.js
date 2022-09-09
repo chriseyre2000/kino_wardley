@@ -6,9 +6,9 @@ test('Empty points is empty', () => {
 });
 
 test('One item is a single item list', () => {
-  expect(buildPoints('0.48, 0.85')).toStrictEqual([{x: 0.48, y: 0.85}])
+  expect(buildPoints('0.48, 0.85')).toStrictEqual([{x: 0.85, y: 0.48}])
 });
 
 test('Multi item is a longer list', () => {
-  expect(buildPoints('[0.43,0.49],[0.08,0.79]')).toStrictEqual([{x: 0.43, y: 0.49}, {x: 0.08, y: 0.79}])
+  expect(buildPoints('[0.43,0.49],[0.08,0.79]')).toStrictEqual([{x: 0.49, y: 0.43}, {x: 0.79, y: 0.08}])
 });
