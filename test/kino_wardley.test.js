@@ -252,6 +252,31 @@ test('Online wardley map parses to expected', () => {
       "x": 0.82,
       "y": 0.38,
     },
+         "1": {
+           "description": "Standardising power allows Kettles to evolve faster",
+           "label": "1",
+           "points": [
+             {
+               "x": 0.43,
+               "y": 0.49,
+             },
+             {
+               "x": 0.08,
+               "y": 0.79,
+             },
+           ],
+         },
+         "2": {
+           "description": "Hot water is obvious and well known",
+           "label": "2",
+           "points": [
+             {
+               "x": 0.48,
+               "y": 0.85,
+             },
+           ],
+         },
+  
     "+a generic note appeared": {
       "dx": 0,
       "dy": 0,
