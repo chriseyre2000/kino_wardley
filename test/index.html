@@ -1,0 +1,29 @@
+
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+
+<h1>This is a playground for rendering</h1>
+
+<svg id="sample">
+
+<script>
+  const item = d3.select('#sample')
+  .attr('width', 400)
+  .attr('height', 200);
+
+  const def = item.append('defs');
+  const lg = def.append("linearGradient").attr("id", "wardley");
+  lg.append("stop").attr("offset", "0%").attr("stop-color", "lightgrey");
+  lg.append("stop").attr("offset", "30%").attr("stop-color", "white");
+  lg.append("stop").attr("offset", "70%").attr("stop-color", "white");
+  lg.append("stop").attr("offset", "100%").attr("stop-color", "lightgrey");
+
+  item.append('rect')
+  .attr('x', 0)
+  .attr('y', 0)
+  .attr('width', 400)
+  .attr('height', 200)
+  .attr('fill', 'url(#wardley)');
+
+
+</script>

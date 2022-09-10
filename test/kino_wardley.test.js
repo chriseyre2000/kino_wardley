@@ -292,6 +292,7 @@ test('Online wardley map parses to expected', () => {
       "x": 0.02,
       "y": 0.6,
     },
+    "__style": "wardley",
     "__height": "400",
     "__id": "myid7",
     "__width": "800",
