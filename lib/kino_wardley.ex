@@ -1,6 +1,13 @@
 defmodule Kino.Wardley do
   @moduledoc """
-  This is the smart cell that can be used to add a Wardley Map to a page.
+  This is a smart cell that can be used to add a Wardley Map to a page.
+
+  Wardley Maps are a chain of needs (a value chain) plotted against
+  an evolution axis.
+
+  See https://en.wikipedia.org/wiki/Wardley_map for a description of what a wardley map is.
+
+  They are typically used to discuss strategy.
 
   """
 
@@ -8,6 +15,9 @@ defmodule Kino.Wardley do
   use Kino.SmartCell, name: "Wardley Map"
   use Kino.JS.Live
 
+  @doc """
+  This is used to create the smart cell.
+  """
   def new(spec) do
     Kino.JS.new(__MODULE__, spec, export_info_string: "wardley")
   end

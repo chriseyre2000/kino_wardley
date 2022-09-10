@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Pending
 
+## [0.6.0]
+
 ### Adding style wardley
 ### diverging from onlinewardleymaps, adding a group
 
@@ -16,6 +18,7 @@ group first [0.605, 0.85, 20, 50] yellow black
 The idea is that you can add ovals with various colours to group things together.
 Overlapping ovals (without a distinct border) should be able to create any required
 grouping.
+### Added some documentation.
 
 ## [0.5.0]
 

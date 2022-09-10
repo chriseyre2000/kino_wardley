@@ -8,7 +8,10 @@ defmodule KinoWardley.MixProject do
       elixir: "~> 1.13",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
-      package: package()
+      package: package(),
+      docs: [
+        extras: ["README.md", "Syntax.md", "CHANGELOG.md"]
+      ]
     ]
   end
 
