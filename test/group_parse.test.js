@@ -9,12 +9,12 @@ test('Sample group spec parses to expected', () => {
   `
   const expected = {
     "My Group": {
-      "cx": 0.5,
-      "cy": 0.6,
+      "cx": 0.6,
+      "cy": 0.5,
       "name": "My Group",
       "type": "group",
-      "rx": 30,
-      "ry": 40,
+      "rx": 40,
+      "ry": 30,
       "fill": "red",
       "border": "black"
     },
