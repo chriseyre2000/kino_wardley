@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Pending
 
+### Added inertia to Components
+
 ## [0.6.0]
 
 ### Adding style wardley

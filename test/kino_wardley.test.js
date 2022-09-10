@@ -4,6 +4,27 @@ test('Empty spec is empty', () => {
   expect(parseSpec([])).toStrictEqual({});
 });
 
+test('Handle inertia', () => {
+  const input = `
+  component Customer [0.95, 0.5] inertia label [-27, -12]
+  `
+
+  const expected =    
+      {
+       "Customer":  {
+         "dx": -27,
+         "dy": -12,
+         "inertia": true,
+         "name": "Customer",
+         "type": "component",
+         "x": 0.5,
+         "y": 0.95,
+       },
+     }
+
+  expect(parseSpec(input.split("\n"))).toStrictEqual(expected);
+})
+
 test('Sample spec parses to expected', () => {
 
   const input = `
@@ -42,6 +63,7 @@ test('Sample spec parses to expected', () => {
     "Cup": {
       "name": "Cup",
       "type": "component",
+      "inertia": false,
       "dx": 0,
       "dy": 0,
       "x": 0.78,
@@ -50,6 +72,7 @@ test('Sample spec parses to expected', () => {
     "Cup of Tea": {
       "name": "Cup of Tea",
       "type": "component",
+      "inertia": false,
       "dx": 0,
       "dy": 0,
       "x": 0.61,
@@ -58,6 +81,7 @@ test('Sample spec parses to expected', () => {
     "Hot Water": {
       "name": "Hot Water",
       "type": "component",
+      "inertia": false,
       "dx": 0,
       "dy": 0,
       "x": 0.8,
@@ -66,6 +90,7 @@ test('Sample spec parses to expected', () => {
     "Kettle": {
       "name": "Kettle",
       "type": "component",
+      "inertia": false,
       "dx": 0,
       "dy": 0,
       "x": 0.35,
@@ -82,6 +107,7 @@ test('Sample spec parses to expected', () => {
     "Power": {
       "name": "Power",
       "type": "component",
+      "inertia": false,
       "dx": 0,
       "dy": 0,
       "x": 0.71,
@@ -106,6 +132,7 @@ test('Sample spec parses to expected', () => {
     "Tea": {
       "name": "Tea",
       "type": "component",
+      "inertia": false,
       "dx": 0,
       "dy": 0,
       "x": 0.81,
@@ -114,6 +141,7 @@ test('Sample spec parses to expected', () => {
     "Water": {
       "name": "Water",
       "type": "component",
+      "inertia": false,
       "dx": 0,
       "dy": 0,
       "x": 0.82,
@@ -175,6 +203,7 @@ test('Online wardley map parses to expected', () => {
     "Cup": {
       "name": "Cup",
       "type": "component",
+      "inertia": false,
       "dx": 0,
       "dy": 0,
       "x": 0.78,
@@ -183,6 +212,7 @@ test('Online wardley map parses to expected', () => {
     "Cup of Tea": {
       "name": "Cup of Tea",
       "type": "component",
+      "inertia": false,
       "dx": 19,
       "dy": -4,
       "x": 0.61,
@@ -191,6 +221,7 @@ test('Online wardley map parses to expected', () => {
     "Hot Water": {
       "name": "Hot Water",
       "type": "component",
+      "inertia": false,
       "dx": 0,
       "dy": 0,
       "x": 0.8,
@@ -199,6 +230,7 @@ test('Online wardley map parses to expected', () => {
     "Kettle": {
       "name": "Kettle",
       "type": "component",
+      "inertia": false,
       "dx": -57,
       "dy": 4,
       "x": 0.35,
@@ -215,6 +247,7 @@ test('Online wardley map parses to expected', () => {
     "Power": {
       "name": "Power",
       "type": "component",
+      "inertia": false,
       "dx": -27,
       "dy": 20,
       "x": 0.7,
@@ -239,6 +272,7 @@ test('Online wardley map parses to expected', () => {
     "Tea": {
       "name": "Tea",
       "type": "component",
+      "inertia": false,
       "dx": 0,
       "dy": 0,
       "x": 0.81,
@@ -247,6 +281,7 @@ test('Online wardley map parses to expected', () => {
     "Water": {
       "name": "Water",
       "type": "component",
+      "inertia": false,
       "dx": 0,
       "dy": 0,
       "x": 0.82,

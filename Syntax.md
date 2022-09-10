@@ -135,6 +135,7 @@ Defines the basic items that the Wardley Map is built out of. It's only limited 
 ```
 component Cup of Tea [0.79, 0.61] label [19, -4]
 component Cup [0.73, 0.78]
+component Cup of Tea [0.79, 0.61] inertia label [-40, -30]
 ```
 
 It has a name, followed by a location in a [visibility, evolution] pair. This expects the values to be floats in the range (0, 1].
@@ -142,6 +143,8 @@ It has a name, followed by a location in a [visibility, evolution] pair. This ex
 Note that a component name cannot include a zero if it needs to evolve.
 
 It has an optional `label` offset [vertical, horizontal] that can be used to shift the location of the label relative to it's component point. This can be helpful to make the diagram clearer.
+
+There is an optional attribute of inertia that will mark the component as being harder to evolve.
 
 ### evolve
 
