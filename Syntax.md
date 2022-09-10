@@ -67,6 +67,7 @@ By convention keywords start with lower case letter and Components start with a 
 - height
 - id
 - note
+- or
 - padding
 - style
 - title
@@ -136,6 +137,7 @@ Defines the basic items that the Wardley Map is built out of. It's only limited 
 component Cup of Tea [0.79, 0.61] label [19, -4]
 component Cup [0.73, 0.78]
 component Cup of Tea [0.79, 0.61] inertia label [-40, -30]
+component Cup [0.73, 0.78] xor
 ```
 
 It has a name, followed by a location in a [visibility, evolution] pair. This expects the values to be floats in the range (0, 1].
@@ -145,6 +147,8 @@ Note that a component name cannot include a zero if it needs to evolve.
 It has an optional `label` offset [vertical, horizontal] that can be used to shift the location of the label relative to it's component point. This can be helpful to make the diagram clearer.
 
 There is an optional attribute of inertia that will mark the component as being harder to evolve.
+
+There is an optional attribute of xor which will display a crossed out square instead of a circle.
 
 ### evolve
 
@@ -235,6 +239,23 @@ The `+` is purely conventional for Wardley Maps and may be ignored. The location
 
 This describes where to draw the note.
 
+### or
+
+This is similar to group, but draws a square.
+
+```
+or first [0.605, 0.85, 0.7, 0.9] yellow black
+or first [0.605, 0.85, 0.75, 0.91] yellow
+```
+
+All four coordinates provide the bottom right and top level area of a rectangle.
+
+All four values are floats from the range (0,1]
+
+The two colour values are fill and border.
+
+This is intended to be used to group multiple components to indicate an OR condition, but could easily be used as a square version of `group`.
+
 ### padding
 
 This allows the padding spacing around the diagram to be controlled. This is an integer value and is optional. It will default to 20 pixels. It's the same value used for top, bottom, left and right.
@@ -298,3 +319,27 @@ first name+<>second name
 ```
 
 This will draw a highlighted line between the two components. It does not follow to evolved items.
+
+### Constraint
+
+```
+first name-c>second name
+```
+
+This indicates a constraint.
+
+### Negative Influence
+
+```
+first name-v>second name
+```
+
+This indicates a negative influence.
+
+### Positive Influence
+
+```
+first name+v>second name
+```
+
+This indicates a positive influence.

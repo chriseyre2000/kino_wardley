@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Pending
 
 ### Added inertia to Components
+### Added some new Wardley Map components based upon a tweet (https://twitter.com/swardley/status/1565744194475499521)
 
 ## [0.6.0]
 
