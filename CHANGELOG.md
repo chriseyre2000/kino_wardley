@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Pending
 
 ### Adding style wardley
+### diverging from onlinewardleymaps, adding a group
 
 ## [0.5.0]
 

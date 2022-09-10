@@ -7,23 +7,31 @@
 <svg id="sample">
 
 <script>
-  const item = d3.select('#sample')
-  .attr('width', 400)
-  .attr('height', 200);
 
-  const def = item.append('defs');
-  const lg = def.append("linearGradient").attr("id", "wardley");
-  lg.append("stop").attr("offset", "0%").attr("stop-color", "lightgrey");
-  lg.append("stop").attr("offset", "30%").attr("stop-color", "white");
-  lg.append("stop").attr("offset", "70%").attr("stop-color", "white");
-  lg.append("stop").attr("offset", "100%").attr("stop-color", "lightgrey");
+  const height = 200;
+  const width = 400;
 
-  item.append('rect')
-  .attr('x', 0)
-  .attr('y', 0)
-  .attr('width', 400)
-  .attr('height', 200)
-  .attr('fill', 'url(#wardley)');
+
+  const svg = d3.select('#sample')
+  .attr('width', width)
+  .attr('height', height);
+
+  const yaxis = d3.scaleLinear()
+  .domain([0, 1.0])
+  .range([0, height]);
+  const xaxis = d3.scaleLinear()
+  .domain([0, 1.0])
+  .range([0, width]);
+
+
+// Add the path using this helper function
+svg.append('ellipse')
+  .attr('cx', xaxis(0.5))
+  .attr('cy', yaxis(0.5))
+  .attr('rx', 40)
+  .attr('ry', 50)
+  .attr('stroke', '#000000')
+  .attr('fill', '#69b3a2');
 
 
 </script>
