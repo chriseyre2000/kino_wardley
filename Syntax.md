@@ -15,6 +15,9 @@ Don't get too hung up on precise placement is the general relationships that mat
 
 The initial syntax was inspired by onlinewardleymaps.com and is largely compatible. It is now beginning to diverge, but does agree on anything used on the tea shop example.
 
+Compatability is why locations are [visibility, evolution] where labels are the other way around [evolution, visibility].
+Locations are in the 0-1 range where as labels are pixels.
+
 Typically KinoWardley.Output is fed a specification that looks like this:
 
 ```
@@ -85,7 +88,7 @@ anchor Customer [0.95, 0.9] label [-10, 5]
 The name of the `anchor` is followed by a location [vertical, horizontal].
 These are each in the range (0 - 1] and may be floating point numbers.
 
-It has an optional `label` offset [vertical, horizontal] that can be used to shift the location of the label relative to it's anchor point. This can be helpful to make the diagram clearer.
+It has an optional `label` offset [horizontal, vertical] that can be used to shift the location of the label relative to it's anchor point. This can be helpful to make the diagram clearer.
 
 ### annotation
 
@@ -144,7 +147,7 @@ It has a name, followed by a location in a [visibility, evolution] pair. This ex
 
 Note that a component name cannot include a zero if it needs to evolve.
 
-It has an optional `label` offset [vertical, horizontal] that can be used to shift the location of the label relative to it's component point. This can be helpful to make the diagram clearer.
+It has an optional `label` offset [horizontal, vertical] that can be used to shift the location of the label relative to it's component point. This can be helpful to make the diagram clearer.
 
 There is an optional attribute of inertia that will mark the component as being harder to evolve.
 
