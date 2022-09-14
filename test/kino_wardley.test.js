@@ -4,6 +4,28 @@ test('Empty spec is empty', () => {
   expect(parseSpec([])).toStrictEqual({});
 });
 
+test('Handle market', () => {
+  const input = `
+  market PCW [0.8, 0.5] inertia label [-27, -12]
+  `
+
+  const expected =    
+  {
+   "PCW":  {
+     "dx": -27,
+     "dy": -12,
+     "inertia": true,
+     "name": "PCW",
+     "type": "market",
+     "x": 0.5,
+     "y": 0.8,
+   },
+ }
+
+expect(parseSpec(input.split("\n"))).toStrictEqual(expected);
+
+});
+
 test('Handle inertia', () => {
   const input = `
   component Customer [0.95, 0.5] inertia label [-27, -12]

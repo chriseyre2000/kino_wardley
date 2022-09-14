@@ -69,6 +69,7 @@ By convention keywords start with lower case letter and Components start with a 
 - group
 - height
 - id
+- market
 - note
 - or
 - padding
@@ -229,6 +230,18 @@ id myId
 ```
 
 This is entirely optional.
+
+### market
+
+This represents a market.
+
+```
+market PCW [0.5, 0.5] 
+market PCW [0.5, 0.5] label [10, -20]
+market PCW [0.5, 0.5] label [10, -20] inertia
+```
+
+These follow the same layout rules as components, and may also evolve.
 
 ### note
 
