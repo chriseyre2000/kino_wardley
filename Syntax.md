@@ -63,6 +63,9 @@ By convention keywords start with lower case letter and Components start with a 
 - annotation
 - annotations
 - background
+- build
+- buy
+- outsource
 - component
 - evolve
 - evolution
@@ -132,6 +135,27 @@ background #001001
 It will treat the supplied value as a colour.
 
 Be warned that the lines on the map are currently drawn in black so using a too dark background may reduce the utility of the map.
+
+### build
+
+This changes the size of the circle drawn for the component named.
+
+Must be set after the component it references.
+
+```
+component Tea [0.5, 0.5] label [10, 0]
+build Tea
+```
+
+### buy
+
+This changes the size of the circle drawn for the component named.
+
+Must be set after the component it references.
+```
+component Tea [0.5, 0.5] label [10, 0]
+buy Tea
+```
 
 ### component
 
@@ -271,6 +295,16 @@ All four values are floats from the range (0,1]
 The two colour values are fill and border.
 
 This is intended to be used to group multiple components to indicate an OR condition, but could easily be used as a square version of `group`.
+
+### outsource
+
+This changes the size of the circle drawn for the component named.
+
+Must be set after the component it references.
+```
+component Tea [0.5, 0.5] label [10, 0]
+outsource Tea
+```
 
 ### padding
 
